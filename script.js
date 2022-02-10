@@ -12,6 +12,12 @@ var minimap = null;
 var minimapRefreshInterval = 5000;
 var playerFinderInterval = 1000;
 
+playAlarm = function () {
+    var audio = new Audio('https://github.com/hart0/alt1-player-spotter/blob/master/alarm.mp3');
+    audio.loop = false;
+    audio.play(); 
+}
+
 var Status = {
     STARTING: {
         id: "STARTING",
@@ -66,7 +72,10 @@ function start() {
 
         var minimapRegion = a1lib.getregion(minimap.x, minimap.y, minimap.w, minimap.h);
         var players = findPlayers(minimapRegion);
-        setStatus(players > 0 ? Status.ALERT : Status.RUNNING);
+        //setStatus(players > 0 ? Status.ALERT : Status.RUNNING);
+        if (players > 0) {setStatus(Status.ALERT); playAlarm();} else {setStatus(Status.RUNNING);};
+       
+        
     }, playerFinderInterval);
 }
 
