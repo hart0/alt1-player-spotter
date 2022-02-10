@@ -24,6 +24,12 @@ function delay(n){
     });
 }
 
+async function myAsyncFunction(){ 
+            setStatus(Status.ALERT);
+            playAlarm();
+            await delay(5);
+            }
+
 var Status = {
     STARTING: {
         id: "STARTING",
@@ -81,11 +87,8 @@ function start() {
         //setStatus(players > 0 ? Status.ALERT : Status.RUNNING);
         if (players > 0) {
             
-            async function myAsyncFunction(){ 
-            setStatus(Status.ALERT);
-            playAlarm();
-            await delay(5);
-            }
+            
+            myAsyncFunction();
             
 
         else {
