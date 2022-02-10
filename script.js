@@ -18,6 +18,12 @@ playAlarm = function () {
     audio.play(); 
 }
 
+function delay(n){
+    return new Promise(function(resolve){
+        setTimeout(resolve,n*1000);
+    });
+}
+
 var Status = {
     STARTING: {
         id: "STARTING",
@@ -73,7 +79,22 @@ function start() {
         var minimapRegion = a1lib.getregion(minimap.x, minimap.y, minimap.w, minimap.h);
         var players = findPlayers(minimapRegion);
         //setStatus(players > 0 ? Status.ALERT : Status.RUNNING);
-        if (players > 0) {setStatus(Status.ALERT); playAlarm();} else {setStatus(Status.RUNNING);};
+        if (players > 0) {
+            
+            async function myAsyncFunction(){ 
+            setStatus(Status.ALERT);
+            playAlarm();
+            await delay(5);
+            }
+            
+
+        else {
+            setStatus(Status.RUNNING);
+        };
+        
+        setTimeout(function(){
+    console.log("I am the third log after 5 seconds");
+},5000);
        
         
     }, playerFinderInterval);
