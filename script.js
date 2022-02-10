@@ -13,7 +13,7 @@ var minimapRefreshInterval = 5000;
 var playerFinderInterval = 1000;
 
 playAlarm = function () {
-    var audio = new Audio('https://github.com/hart0/alt1-player-spotter/blob/master/alarm.mp3');
+    var audio = new Audio('https://hart0.github.io/alt1-player-spotter/alarm.mp3');
     audio.loop = false;
     audio.play(); 
 }
