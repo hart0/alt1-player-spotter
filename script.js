@@ -79,7 +79,7 @@ function start() {
             
             setStatus(Status.ALERT);
             
-            if (alarmReadyAgain = true) {
+            if (alarmReadyAgain == true) {
             playAlarm();
             alarmReadyAgain = false;
             setTimeout(function() { alarmReadyAgain = true; }, 5000);    
