@@ -87,9 +87,8 @@ function start() {
         //setStatus(players > 0 ? Status.ALERT : Status.RUNNING);
         if (players > 0) {
             
-            
             myAsyncFunction();
-            
+        }
 
         else {
             setStatus(Status.RUNNING);
