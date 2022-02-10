@@ -12,23 +12,13 @@ var minimap = null;
 var minimapRefreshInterval = 5000;
 var playerFinderInterval = 1000;
 
+var alarmReadyAgain = true;
 playAlarm = function () {
     var audio = new Audio('https://hart0.github.io/alt1-player-spotter/alarm.mp3');
     audio.loop = false;
     audio.play(); 
 }
 
-function delay(n){
-    return new Promise(function(resolve){
-        setTimeout(resolve,n*1000);
-    });
-}
-
-async function myAsyncFunction(){ 
-            setStatus(Status.ALERT);
-            playAlarm();
-            await delay(5);
-            }
 
 var Status = {
     STARTING: {
@@ -87,17 +77,19 @@ function start() {
         //setStatus(players > 0 ? Status.ALERT : Status.RUNNING);
         if (players > 0) {
             
-            myAsyncFunction();
+            setStatus(Status.ALERT);
+            
+            if (alarmReadyAgain = true) {
+            playAlarm();
+            alarmReadyAgain = false;
+            setTimeout(function() { alarmReadyAgain = true; }, 5000);    
+            }
+
         }
 
         else {
             setStatus(Status.RUNNING);
         };
-        
-        setTimeout(function(){
-    console.log("I am the third log after 5 seconds");
-},5000);
-       
         
     }, playerFinderInterval);
 }
