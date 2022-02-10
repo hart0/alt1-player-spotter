@@ -10,12 +10,13 @@ var minimapReader = new MinimapReader();
 var minimap = null;
 
 var minimapRefreshInterval = 5000;
-var playerFinderInterval = 1000;
+var playerFinderInterval = 500;
 
 var alarmReadyAgain = true;
 playAlarm = function () {
     var audio = new Audio('https://hart0.github.io/alt1-player-spotter/alarm.mp3');
     audio.loop = false;
+    audio.volume = 0.1;
     audio.play(); 
 }
 
@@ -38,7 +39,7 @@ var Status = {
     },
     ALERT: {
         id: "ALERT",
-        text: "PLAYERS DETECTED!",
+        text: "PLAYER DETECTED!",
         class: "alert"
     }
 };
