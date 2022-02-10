@@ -1,9 +1,9 @@
 {
     "appName": "Player spotter",
     "description": "Spots players on the minimap and warns the user",
-    "appUrl": "https://htmlpreview.github.io/?https://github.com/hart0/alt1-player-spotter/blob/master/index.html",
-    "configUrl": "https://raw.githubusercontent.com/hart0/alt1-player-spotter/master/appconfig.json",
-    "iconUrl": "https://raw.githubusercontent.com/hart0/alt1-player-spotter/master/app_icon.png",
+    "appUrl": "https://hart0.github.io/alt1-player-spotter/index.html",
+    "configUrl": "https://hart0.github.io/alt1-player-spotter/appconfig.json",
+    "iconUrl": "https://hart0.github.io/alt1-player-spotter/app_icon.png",
     "defaultWidth": 350,
     "defaultHeight": 600,
     "minWidth": 250,
